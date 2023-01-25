@@ -1,10 +1,15 @@
-// You should implement your task here.
-
-
-
 module.exports = function towelSort(matrix) {
-   let arr = matrix.reduce((sum, cur, i) => {
-        return sum.concat(!(i % 2) ? cur : cur.reverse());
-    }, []);
-    return arr;
+    let newArray = [];
+    if (!matrix.length === 0) {
+        for (let i = 0; i < matrix.length; i++) {
+            if (i % 2 === 1) {
+                newArray.concat(matrix[i].reverse());
+            } else {
+                newArray.concat(matrix[i]);
+            }
+            return newArray;
+        }
+    } else {
+        return [];
+    }
 };
